@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Shrikhand&display=swap');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url(../imag/6043353.jpg);
+    background-size: cover;
+}
+
+
+header{
+    font-family: 'Shrikhand', cursive;
+    background-color: #7baf43;
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    background-color: #905202;
+    border-radius: 40px;
+    color: white;
+    width: 450px;
+    margin: auto;
+    font-family: 'Shrikhand', cursive;
+    font-size: 18px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.pontos {
+    font-family: 'Shrikhand', cursive;
+    background-color: #FFC857;
+    color: white;
+    height: 40px;
+    display: flex;
+    padding: 1px 9px ;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 61px;
+    flex-direction: column;
+}
+
+.start input{
+    background-color: #905202;
+    color: white;
+    width: 177px;
+    height: 65px;
+    font-family: 'Shrikhand', cursive;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+}
+
+.start input:hover{
+    background-color: #5f3908;
+}
+
+.start button{
+    background-color: #905202;
+    color: white;
+    width: 177px;
+    height: 65px;
+    font-family: 'Shrikhand', cursive;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin: 14px;
+}
+
+.start button:hover{
+    background-color:  #c6a171;
+}
+
+.start button a:visited{
+    color: white;
+}
+
+.start a{
+    text-decoration: none;
+}
+
+.tabuleiro{
+    overflow: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabuleiro .table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.cartas img{
+    width: 300px;
+    border-radius: 10px;
+}
+
+.cartas img:hover{
+    transform: scale(0.9);
+}
+
+.tutor_cont{
+    background-color: #FFC857;
+    width: 200px;
+}
+
+.cont_pontos{
+    width: 250px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    position: absolute;
+    top: 30%;
+    left: 39%;
+    background-color: #FFC857;
+}
+
+.mainFilter{
+    filter: blur(2px);
+}
+
+footer{
+    background: linear-gradient(to top, #7baf43, rgb(165, 215, 111), white 95%);
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Shrikhand', cursive;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer h3:hover{
+    color: #af4369;
+}
+
+@media (min-width: 1025px) { 
+    header{
+        font-size: 23px;
+        height: 80px;
+    }
+    .cartas img{
+        width: 400px;
+        border-radius: 10px;
+    }
+
+    .tabuleiro{
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+    }
+
+    .tabuleiro .table{
+        padding-left: 150px;
+    }
+
+    .start button{
+        width: 227px;
+        height: 86px;
+        font-size: 30px;
+    }
+
+    .start input{
+        width: 227px;
+        height: 86px;
+        font-size: 30px;
+    }
+
+    .pontos {
+        height: 50px;
+        font-size: 28px;
+    }
+
+    footer{
+        height: 80px;
+        font-size: 25px;
+    }
+} 
