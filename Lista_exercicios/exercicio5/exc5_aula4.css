@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #e7f3f0;
+}
+
+header, h1{
+    text-align: center;
+    background-color: #35342a;
+    margin: 0 0 25px 0;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    color: #FFFFFF;
+}
+
+.container{
+    background-color: #563617;
+    margin: auto;
+    width: 70%;
+    padding: 7px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 11px 11px 15px 0px #3b413c52;
+    color: #FFFFFF;
+}
+
+.container ul, li{
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+.votos{
+    background-color: #563617;
+    margin: 25px auto;
+    width: 70%;
+    padding: 7px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 11px 11px 15px 0px #3b413c52;
+    color: #FFFFFF;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+}
+
+input[type=submit], input[type=reset] {
+    background-color: #35342a;
+    color: white;
+    height: 50px;
+    width: 180px;
+    margin: 9px;
+    border-radius: 14px;
+}
+
+input[type=number]{
+    border-radius: 5px;
+    width: 80px;
+    margin: 9px;
+}
+
+.cand_esld{
+    background-color: #6c5741;
+    margin: auto;
+    width: 60%;
+    padding: 7px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 11px 11px 15px 0px #3b413c52;
+    color: #FFFFFF;
+}
+
+.resul{
+    background-color: #6c5741;
+    margin: 25px auto;
+    width: 60%;
+    padding: 7px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 11px 11px 15px 0px #3b413c52;
+    color: #FFFFFF;
+}
+
