@@ -1,0 +1,1 @@
+Este é um jogo da Memória que desenvolvi com ajuda do repositório do ComputerScienceMaster. Incrementei mais coisas, como pontuação, níveis do jogo, deixei o jogo mais interativo, entre outros atributos.
