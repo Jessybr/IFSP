@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1700081176 source:d:\estrut_dados\aula11\listaligada.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+
+1700081062 d:\estrut_dados\aula11\listaligada.h
+
+1700081454 source:d:\estrut_dados\aula11\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+	<locale.h>
+

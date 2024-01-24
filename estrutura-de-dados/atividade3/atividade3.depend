@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1695758220 source:c:\users\jessi\onedrive\documentos\estrut_dados\atividade3\calculadora.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadora.h"
+
+1695758220 c:\users\jessi\onedrive\documentos\estrut_dados\atividade3\calculadora.h
+
+1695836714 source:c:\users\jessi\onedrive\documentos\estrut_dados\atividade3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadora.h"
+	<locale.h>
+

@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1696879434 source:c:\users\jessi\onedrive\documentos\estrut_dados\lista2\lista2_15\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"my_lib.h"
+	<locale.h>
+
+1696881202 c:\users\jessi\onedrive\documentos\estrut_dados\lista2\lista2_15\my_lib.h
+
+1696879167 source:c:\users\jessi\onedrive\documentos\estrut_dados\lista2\lista2_15\my_lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"my_lib.h"
+	<locale.h>
+
