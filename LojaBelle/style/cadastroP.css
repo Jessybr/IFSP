@@ -1,0 +1,7 @@
+.formu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    flex-direction: column;
+}

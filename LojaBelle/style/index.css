@@ -1,0 +1,24 @@
+main {
+    height: calc(100vh - 180px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+}
+
+main button{
+    margin: auto;
+    background-color: pink;
+    border-radius: 20px;
+    height: 40px;
+    border: none;
+    color: black;
+    width: 150px;
+}
+
+main button a, a:visited, a:active{
+    color: black;
+}
