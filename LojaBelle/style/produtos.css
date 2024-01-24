@@ -1,0 +1,45 @@
+.conteiner1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto ;
+    width: 1000px;
+    flex-wrap: wrap;
+}
+
+.cardP{
+    width: 278px;
+    background-color: pink;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.cardP img{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.cardC{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardC p{
+    width: 250px;
+    text-align: center;
+}  
+
+
+h3{
+    text-align: center;
+}

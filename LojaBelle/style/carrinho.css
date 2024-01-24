@@ -1,0 +1,13 @@
+.conteiner1{
+    height: calc(100vh - 180px);
+
+}
+
+table{
+    width: 70%;
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+}
