@@ -1,0 +1,52 @@
+body{
+    padding: 20px;
+    margin: 0;
+    background-color: antiquewhite;
+    color: white;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(238, 111, 154);
+    width: 70%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    font-family: cursive;
+}
+
+h1{
+    color: white;
+    font-weight: lighter;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+form label{
+    margin: 10px;
+}
+
+form button{
+    background-color: rgb(21, 119, 78);
+    border-radius: 20px;
+    border: none;
+    padding: 7px 20px;
+    color: white;
+    font-family: cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+font input[type=text]{
+    border-radius: 20px;
+}
