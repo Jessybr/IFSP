@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1710180608 source:c:\users\jessi\onedrive\documentos\github\ifsp\estrutura-de-dados\atividaderashtable\hashbibli.c
+
+1710185150 source:c:\users\jessi\onedrive\documentos\github\ifsp\estrutura-de-dados\atividaderashtable\hashtable.c
+	<stdio.h>
+	<stdlib.h>
+	"hashTable.h"
+
+1710183045 c:\users\jessi\onedrive\documentos\github\ifsp\estrutura-de-dados\atividaderashtable\hashtable.h
+
+1710185693 source:c:\users\jessi\onedrive\documentos\github\ifsp\estrutura-de-dados\atividaderashtable\main.c
+	<stdio.h>
+	<stdlib.h>
+	"hashTable.h"
+	"hashBibli.h"
+
+1710185920 c:\users\jessi\onedrive\documentos\github\ifsp\estrutura-de-dados\atividaderashtable\hashbibli.h
+
