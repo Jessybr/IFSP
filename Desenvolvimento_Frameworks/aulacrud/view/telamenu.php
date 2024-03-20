@@ -24,14 +24,11 @@
             <a href="../model/listarproduto.php">
                 Listar produtos
             </a>
-            <a href="../model/filtrarclinte.php">
-                Fitlrar clientes
+            <a href="filtrarcliente.php">
+                Filtrar clientes
             </a>
-            <a href="../model/filtrarproduto.php">
+            <a href="filtrarproduto.php">
                 Filtrar produtos
-            </a>
-            <a href="../model/filtrarproduto.php">
-                Listar todos produtos
             </a>
         </div>
     </div>

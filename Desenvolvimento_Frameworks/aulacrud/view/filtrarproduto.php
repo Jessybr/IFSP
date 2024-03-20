@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filtrar produto</title>
+    <link rel="stylesheet" href="../css/filtrar.css">
 </head>
 <body>
     <div class="container">
@@ -15,6 +16,9 @@
                 <input type="submit" value="Pesquisar">
             </label>
         </form>
+        <a href="../view/telamenu.php">
+            Voltar
+        </a>
     </div>
     
 </body>

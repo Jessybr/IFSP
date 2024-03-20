@@ -21,6 +21,7 @@
                     <input type="text" name="cxsenha">
                 </label>
                 <input type="submit" value="Acessar">
+                <a href="telamenu.php">menu</a>
             <!-- </fieldset> -->
         </form>
     </div>
