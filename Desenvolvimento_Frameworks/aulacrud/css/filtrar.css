@@ -13,7 +13,7 @@ html, body{
     text-align: center;
     padding: 30px;
     background-color: aliceblue;
-    width: 556px;
+    max-width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,6 +59,7 @@ form input[type=submit]{
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
+    width: 90px;
 }
 
 form input[type=submit]:hover{

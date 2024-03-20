@@ -21,47 +21,43 @@ html, body{
     border-radius: 20px;
 }
 
-.container a{
-    margin: 10px;
-    border-radius: 5px;
-    height: 20px;
-    background-color: rgb(221, 248, 170);
-    text-decoration: none;
-    width: 140px;
-    color: rgb(40, 41, 40);
-    font-size: 0.9rem;
-    font-weight: 500;
+.container p{
+    font-weight: bold;
 }
 
-.container a:hover{
-    background-color: rgba(187, 236, 154, 0.829);
+.container p span{
+    color: rgb(238, 62, 62);
 }
 
-.container a:visited{
-    color: rgb(40, 41, 40);
+.container table{
+    margin: 30px;
+    text-align: start;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
+.container table td{
+    padding-left: 9px;
 }
 
-form input{
-    margin: 20px;
-    border: none;
-    border-radius: 5px;
-    height: 20px;
-}
-
-form input[type=submit]{
+.container button{
     height: 25px;
     background-color: rgb(221, 248, 170);
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
+    width: 90px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
 }
 
-form input[type=submit]:hover{
+.container button:hover{
     background-color: rgba(187, 236, 154, 0.829);
 }
 
+.container button[type=submit]{
+    background-color: rgb(245, 123, 123);
+}
+
+.container button[type=submit]:hover{
+    background-color: rgba(245, 123, 123, 0.829);
+}

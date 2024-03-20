@@ -21,11 +21,12 @@ header h1{
     text-align: center;
     padding: 30px;
     background-color: aliceblue;
-    max-width: 606px;
+    max-width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 20px;
+    justify-content: center;
 }
 
 .container .cont-lista{
@@ -34,6 +35,15 @@ header h1{
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    border-bottom: 1px solid rgb(40, 41, 40);;
+}
+
+.cont-lista form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .cont-lista form input{
@@ -43,30 +53,49 @@ header h1{
     width: 100px;
 }
 
-.cont-lista form #btn-exluir{
+.cont-lista form input[type=text]{
+    width: 200px;
+    height: 22px;
+}
+
+.cont-lista form #btn-exluir, a{
     height: 25px;
     background-color: rgb(248, 170, 170);
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
 }
 
-.cont-lista form #btn-editar{
+.cont-lista form #btn-exluir > a{
+    background-color: transparent;
+}
+
+.cont-lista form #btn-editar, a{
     height: 25px;
     background-color: rgb(170, 213, 248);
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+.cont-lista form #btn-editar > a{
+    background-color: transparent;
 }
 
 .container a{
     text-decoration: none;
-    color: black;
-    background-color: rgb(221, 248, 170);
     margin: 20px;
     width: 100px;
-    padding: 10px;
     border-radius: 10px;
+    color: black;
+    background-color: rgb(221, 248, 170);
+    padding: 2px 10px;
+    text-align: center;
+    text-justify: center;
 }
 
 .container a:hover{
