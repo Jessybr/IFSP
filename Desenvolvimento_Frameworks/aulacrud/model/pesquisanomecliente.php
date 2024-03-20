@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/listar.css">
     <title>Exibir clientes</title>
 </head>
-<body>  
+<body> 
+    <div class="container">
     <?php 
         include_once '../factory/conexao.php';
 
@@ -14,24 +16,41 @@
         $consultar = "select * from tbcliente where nome = '$pesqnome'";
         $executar = mysqli_query($conn, $consultar);
 
-        $linha = mysqli_fetch_array($executar)
-
+        if(mysqli_num_rows($executar)){
+            while($linha = mysqli_fetch_array($executar)){
         
     ?>
-    <form action="" method="post">
-        <label>
-            Nome:
-            <input type="text" name="cxnome" value="<?php echo $linha["nome"] ?>">           
-        </label>
-        <label>
-            E-mail:
-            <input type="text" name="cxemail" value="<?php echo $linha["email"] ?>">
-        </label>
-    </form><br>
+        <div class="cont-lista">
+            <form action="" method="get">
+                <label>
+                    Nome:
+                    <input type="text" name="cxnome" value="<?php echo $linha["nome"] ?>">
+                </label>
+                <label>
+                    E-mail:
+                    <input type="text" name="cxemail" value="<?php echo $linha["email"] ?>">
+                </label>
+                <button id="btn-exluir"><a href="excluircliente.php?id=<?php echo $linha['cod'];?>">X</a></button>
+                <button id="btn-editar"><a  href="editarcliente.php?id=<?php echo $linha['cod'];?>">Editar</a></button>
+                
+            </form>
+        </div>
 
-    <a href="../view/cadastrocliente.php">
-        Voltar
-    </a>
+    <?php   } 
+    
+        } else {
+            ?>
+                    
+            <h3>Cliente não encontrado</h3>
+
+        <?php
+                }
+        ?>
+
+        <a href="../view/telamenu.php">
+            Voltar
+        </a>
+    </div>
     
 </body>
 </html>

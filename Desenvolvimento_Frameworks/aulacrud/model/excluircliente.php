@@ -1,15 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir cliente</title>
+    <link rel="stylesheet" href="../css/excluir.css">
+</head>
+<body>
+    <div class="container">
+        <p>Tem certeza que deseja <span>excluir</span> o cliente abaixo?</p>
+        <table>
+            <tr>
+                <td>Cliente:</td><td><?php echo $_GET['nome']?></td>
+            </tr>
+            <tr>
+                <td>Email:</td><td><?php echo $_GET['email']?></td>
+            </tr>
+            
+        </table>
+        <form method="post" action="">
+            <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+            <button type="submit" name="excluir">Excluir</button>
+        </form>
+        <a href="listarcliente.php"><button>Voltar</button></a>
+    </div>
+    
+</body>
+</html>
+
 <?php 
     include_once '../factory/conexao.php';
-    $cod = $_GET['id'];
-    $excluir = "delete from tbcliente where cod='$cod'";
-    
-    $executar = mysqli_query($conn, $excluir);
-
-    if($executar){
-        echo "<script>alert('Cliente deletado com successo')</script>";
-        echo "<a href='../model/listarcliente.php'>";
+    if(isset($_POST['excluir'])){
+        $cod = $_GET['id'];
+        $excluir = "delete from tbcliente where cod='$cod'";
         
-    }else{
-        echo "<script>alert('Dados não encontrados')</script>";
+        $executar = mysqli_query($conn, $excluir);
+
+        if($executar){
+            echo "<script>alert('Cliente deletado com successo');
+                window.location.href='listarcliente.php';
+            </script>";
+        }else{
+            echo "<script>alert('Dados não encontrados')</script>";
+        }
+
     }
 ?>

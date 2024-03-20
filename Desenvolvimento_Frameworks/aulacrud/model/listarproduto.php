@@ -9,41 +9,53 @@
 </head>
 <body>  
     <div class="container">
-        <div class="cont-lista">
+       
             <?php
                 include_once '../factory/conexao.php';
                 $consultar = "select * from tbproduto";
                 $executar = mysqli_query($conn, $consultar);
-                while($linha = mysqli_fetch_array($executar)){
+
+                if(mysqli_num_rows($executar)){
+                    while($linha = mysqli_fetch_array($executar)){
             
             ?>
-            <form action="" method="post">
-                <label>
-                    Produto:
-                    <input type="text" name="cxproduto" value="<?php echo $linha["produto"] ?>">
-                </label>
-                <label>
-                    Data de validade:
-                    <input type="date" name="cxdatavalidade" value="<?php echo $linha["datavalidade"] ?>">
-                </label>
-                <label>
-                    Quantidade:
-                    <input type="number" name="cxquantidade" value="<?php echo $linha["qtde"] ?>">
-                </label>
-                <label>
-                    Valor:
-                    <input type="text" name="cxvalor" value="<?php echo $linha["valor"] ?>">
-                </label>
-                
-                <a id="btn-exluir" href="excluirproduto.php?id=<?php echo $linha['cod'];?>">X</a>
-                <a id="btn-editar" href="editarproduto.php?id=<?php echo $linha['cod'];?>">Editar</a>
-                
-                <hr>
-            </form>
+                        <div class="cont-lista">
+                        <form action="" method="post">
+                            <label>
+                                Produto:
+                                <input type="text" name="cxproduto" value="<?php echo $linha["produto"] ?>">
+                            </label>
+                            <label>
+                                Data de validade:
+                                <input type="date" name="cxdatavalidade" value="<?php echo $linha["datavalidade"] ?>">
+                            </label>
+                            <label>
+                                Quantidade:
+                                <input type="number" name="cxquantidade" value="<?php echo $linha["qtde"] ?>">
+                            </label>
+                            <label>
+                                Valor:
+                                <input type="text" name="cxvalor" value="<?php echo $linha["valor"] ?>">
+                            </label>
+                            
+                            <button id="btn-exluir"><a href="excluirproduto.php?id=<?php echo $linha['cod'];?>&produto=<?php echo $linha['produto'];?>&datavalidade=<?php echo $linha['datavalidade'];?>&qtde=<?php echo $linha['qtde'];?>&valor=<?php echo $linha['valor'];?>">X</a></button>
+                            <button id="btn-editar"><a href="editarproduto.php?id=<?php echo $linha['cod'];?>">Editar</a></button>
+                            
+                        
+                        </form>
+                        </div>
             
-            <?php } ?>
-        </div>
-        <a href="../view/cadastroproduto.php">
+            <?php 
+                    }
+                }else{
+                    ?>
+                    
+                        <h3>Não há produtos para listar. Cadastre um primeiro.</h3>
+                    <?php
+                }
+                ?>
+        
+        <a href="../view/telamenu.php">
             Voltar
         </a>
     </div>
