@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Shrikhand&display=swap');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url(../imag/6043353.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header{
+    background-color: #7baf43;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .titulo{
+        font-family: 'Shrikhand', cursive;
+        color: white;
+    }
+}
+
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 61px;
+    flex-direction: column;
+
+    button{
+        background-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(3px);
+        color: #3c5f2c;
+        width: 177px;
+        height: 65px;
+        font-family: 'Shrikhand', cursive;
+        border-radius: 10px;
+        border: none;
+        font-size: 20px;
+        margin: 14px;
+
+        &:hover{
+            background-color:  #67676734;
+        }
+
+        a{
+            text-decoration: none;
+
+            &:visited{
+                color: white;
+            }
+        }
+    }
+}
+
+footer{
+    background: linear-gradient(to top, #7baf43, rgb(165, 215, 111), white 95%);
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Shrikhand', cursive;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    h3{
+        &:hover{
+            color: #af4369;
+        }
+    }
+
+}
+
+@media (min-width: 1482px) { 
+    header{
+        font-size: 23px;
+        height: 80px;
+    }
+
+    .start {
+        button{
+            width: 227px;
+            height: 86px;
+            font-size: 30px;
+        }
+        input{
+            width: 227px;
+            height: 86px;
+            font-size: 30px;
+        }
+    }
+
+    footer{
+        height: 80px;
+        font-size: 25px;
+    }
+}

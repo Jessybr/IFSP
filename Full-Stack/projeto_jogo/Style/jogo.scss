@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Shrikhand&display=swap');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url(../imag/6043353.jpg);
+    background-size: cover;
+}
+
+
+header{
+    font-family: 'Shrikhand', cursive;
+    background-color: #7baf43;
+    color: white;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .titulo{
+        font-family: 'Shrikhand', cursive;
+        background-color: #7baf43;
+        color: white;    
+    }
+}
+
+
+.pontos {
+    font-family: 'Shrikhand', cursive;
+    background-color: #FFC857;
+    color: white;
+    height: 40px;
+    display: flex;
+    padding: 1px 9px ;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.tabuleiro{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    .table{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+
+        .cartas{ 
+            img{
+                width: 200px;
+                border-radius: 10px;
+        
+                &:hover{
+                    transform: scale(0.9);
+                }
+            }
+        }
+    }
+
+}
+
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 61px;
+    flex-direction: column;
+
+    input{
+        background-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(3px);
+        color: #3c5f2c;
+        width: 177px;
+        height: 65px;
+        font-family: 'Shrikhand', cursive;
+        border-radius: 10px;
+        border: none;
+        font-size: 20px;
+        margin: 14px;
+
+        &:hover{
+            background-color:  #67676734;
+        }
+    }
+
+    button, .voltar-inp{
+        background-color: #7baf43;
+        color: #3c5f2c;
+        width: 177px;
+        height: 65px;
+        font-family: 'Shrikhand', cursive;
+        border-radius: 10px;
+        border: none;
+        font-size: 20px;
+        margin: 14px;
+
+        &:hover{
+            background-color:  #67676734;
+        }
+
+        a{
+            text-decoration: none;
+
+            &:visited{
+                color: white;
+            }
+        }
+    }
+}
+
+.tutor_cont{
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    color: #3c5f2c;
+    width: 200px;
+}
+
+.cont_pontos{
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    color: #3c5f2c;
+} 
+
+.mainFilter{
+    filter: blur(2px);
+}
+
+
+@media (min-width: 1482px){
+    header{
+        font-size: 23px;
+        height: 80px;
+    }
+    
+
+    .tabuleiro{
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .cartas img{
+            width: 328px;
+            border-radius: 10px;
+        }
+    }
+
+    .start{
+        input{
+            width: 227px;
+            height: 86px;
+            font-size: 30px;
+        }
+    }
+
+    .pontos {
+        height: 50px;
+        font-size: 28px;
+    }
+}
