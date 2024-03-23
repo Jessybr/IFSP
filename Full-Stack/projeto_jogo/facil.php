@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Memória</title>
-    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/jogo.css">
 </head>
 <body>
 <header>
-    <h1>Jogo da memória</h1>
+    <h1 class="titulo">Jogo da memória</h1>
 </header>
 <?php
 
@@ -28,8 +28,8 @@ if (isset($_POST['acao']) && $_POST['acao'] == "reset") {
 if ((isset($_POST['acao']) && $_POST['acao'] == "Voltar") || (isset($_POST['acao']) && $_POST['acao'] == "Fácil")) {
     
     $facil = [
-        ["cervo", "boto", "floresta", "gelo"],
-        ["gelo", "boto", "cervo", "floresta"]
+        ["cervo", "boto", "riacho", "macaco"],
+        ["macaco", "boto", "cervo", "riacho"]
     ];
     $_SESSION['facil'] = $facil;
 
@@ -165,7 +165,7 @@ if (
     }
     $cont = Contagem($cont);
     if($cont == 8){
-        echo "<div style='width: 260px; color: white; text-align: center; border-radius: 15px; position: absolute; top: 30%; left: 45%; background-color: #FFC857;'>
+        echo "<div class='cont_pontos'>
         <h2 style='font-family: 'Shrikhand', cursive;'>VOCÊ GANHOU!</h2>
         <div class='start'>
         <button><a href='index.php'>Voltar</a></button>

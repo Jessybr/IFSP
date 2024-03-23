@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Memória</title>
-    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/index.css">
 </head>
 <body>
 <?php 
@@ -19,7 +19,7 @@ if (isset($_POST['acao']) && $_POST['acao'] == "reset") {
 }
  ?>
 <header>
-    <h1>Jogo da memória</h1>
+    <h1 class="titulo">Jogo da memória</h1>
 </header>
     <div class="start">
         <a href="config.php">

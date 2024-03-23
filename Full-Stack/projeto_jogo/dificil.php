@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Memória</title>
-    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/jogo.css">
 </head>
 <body>
 <header>
@@ -23,8 +23,8 @@ if (isset($_POST['acao']) && $_POST['acao'] == "Voltar") {
 
 if ((isset($_POST['acao']) && $_POST['acao'] == "Voltar") || (isset($_POST['acao']) && $_POST['acao'] == "Difícil")) {
     $dificil = [
-        ["abelha", "hidroeletrica", "onca", "mares", "solar", "tresRs"],
-        ["onca", "mares", "abelha", "tresRs", "solar", "hidroeletrica"]
+        ["abelha", "hidreletrica", "onca", "gato", "solar", "macaco"],
+        ["onca", "gato", "abelha", "macaco", "solar", "hidreletrica"]
     ];
     $_SESSION['dificil'] = $dificil;
 
@@ -82,7 +82,7 @@ if (
 
     <?php if (isset($_SESSION['final_tab'])) {  ?>
 
-        <div class="tabuleiro" style="overflow: auto; width: 90%; display: flex; justfy-content: center">
+        <div class="tabuleiro" style="display: flex; justfy-content: center">
             <table class="table">
 
                 <?php for ($l = 0; $l < 2; $l++) {    ?>
@@ -160,7 +160,7 @@ if (
     }
     $cont = Contagem($cont);
     if($cont == 8){
-        echo "<div style='width: 250px; color: white; text-align: center; border-radius: 15px; position: absolute; top: 30%; left: 45%; background-color: #FFC857;'>
+        echo "<div class='cont_pontos'>
         <h2>VOCÊ GANHOU!</h2>
         <div class='start'>
         <button><a href='index.php'>Voltar</a></button>
