@@ -6,11 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Geral</title>
     <link rel="stylesheet" href="../css/menu.css">
+    <?php 
+        session_start();
+        if((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)){
+            echo "<script>
+                alert('Acesso inválido, faça login primeiro!');
+                window.location.href='../index.php';
+            </script>";
+        }
+
+        $logado = $_SESSION['login'];    
+    ?>
 </head>
 <body>
     <div class="container">
     <h1>Menu</h1>
         <div class="cont-menu">
+
+        <?php 
+            echo "Perfil: ".$logado;
+            echo "<a href='sair.php' id='btn-sair'>Sair</a>";
+        ?>
             
             <a href="cadastrocliente.php">
                 Cadastrar cliente

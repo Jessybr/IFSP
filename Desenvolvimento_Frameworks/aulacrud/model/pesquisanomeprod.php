@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exibir clientes</title>
     <link rel="stylesheet" href="../css/listar.css">
+    <?php 
+        session_start();
+        if((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)){
+            echo "<script>
+                alert('Acesso inválido, faça login primeiro!');
+                window.location.href='../index.php';
+            </script>";
+        }
+
+    ?>
 </head>
 <body>  
     <div class="container">
@@ -39,10 +49,6 @@
                     Valor:
                     <input type="text" name="cxvalor" value="<?php echo $linha["valor"] ?>">
                 </label>
-                
-                <button id="btn-exluir"><a href="excluirproduto.php?id=<?php echo $linha['cod'];?>">X</a></button>
-                <button id="btn-editar"><a href="editarproduto.php?id=<?php echo $linha['cod'];?>">Editar</a></button>
-                
             
             </form>
         </div>

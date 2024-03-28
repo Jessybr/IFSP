@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exibir clientes</title>
     <link rel="stylesheet" href="../css/listar.css">
+    <?php 
+        session_start();
+        if((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)){
+            echo "<script>
+                alert('Acesso inválido, faça login primeiro!');
+                window.location.href='../index.php';
+            </script>";
+        }
+
+    ?>
 </head>
 <body>  
     <div class="container">
@@ -18,17 +28,19 @@
                 if(mysqli_num_rows($executar)){
                     while($linha = mysqli_fetch_array($executar)){  ?>
                         <div class="cont-lista">
-                        <form action="" method="get">
+                        <form action="editarcliente.php" method="get">
                             <label>
                                 Nome:
-                                <input type="text" name="cxnome" value="<?php echo $linha["nome"] ?>">
+                                <input type="text" name="nome" value="<?php echo $linha["nome"] ?>">
                             </label>
                             <label>
                                 E-mail:
-                                <input type="text" name="cxemail" value="<?php echo $linha["email"] ?>">
+                                <input type="text" name="email" value="<?php echo $linha["email"] ?>">
                             </label>
-                            <button id="btn-exluir"><a href="excluircliente.php?id=<?php echo $linha['cod'];?>&nome=<?php echo $linha['nome'];?>&email=<?php echo $linha['email'];?>">X</a></button>
-                            <button id="btn-editar"><a  href="editarcliente.php?id=<?php echo $linha['cod'];?>">Editar</a></button>
+                            <button id="btn-excluir"><a href="excluircliente.php?cod=<?php echo $linha['cod'];?>&nome=<?php echo $linha['nome'];?>&email=<?php echo $linha['email']; ?> ">X</a></button>
+                            <input type="hidden" name="cod" value="<?php echo $linha['cod'] ?>">
+                            <input id="btn-editar" type="submit" value="Editar">    
+                        </button>
                             
                         </form>
                         </div>

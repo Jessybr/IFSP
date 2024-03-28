@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/listar.css">
     <title>Exibir clientes</title>
+    <?php 
+        session_start();
+        if((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)){
+            echo "<script>
+                alert('Acesso inválido, faça login primeiro!');
+                window.location.href='../index.php';
+            </script>";
+        }
+
+    ?>
 </head>
 <body> 
     <div class="container">
@@ -30,8 +40,6 @@
                     E-mail:
                     <input type="text" name="cxemail" value="<?php echo $linha["email"] ?>">
                 </label>
-                <button id="btn-exluir"><a href="excluircliente.php?id=<?php echo $linha['cod'];?>">X</a></button>
-                <button id="btn-editar"><a  href="editarcliente.php?id=<?php echo $linha['cod'];?>">Editar</a></button>
                 
             </form>
         </div>

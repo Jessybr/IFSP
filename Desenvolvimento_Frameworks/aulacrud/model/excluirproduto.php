@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir produto</title>
     <link rel="stylesheet" href="../css/excluir.css">
+    <?php 
+        session_start();
+        if((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)){
+            echo "<script>
+                alert('Acesso inválido, faça login primeiro!');
+                window.location.href='../index.php';
+            </script>";
+        }
+
+        $logado = $_SESSION['login'];    
+    ?>
 </head>
 <body>
     <div class="container">

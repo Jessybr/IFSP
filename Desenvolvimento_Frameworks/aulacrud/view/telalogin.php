@@ -9,20 +9,17 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="post">
-            <!-- <fieldset id="cxlogin"> -->
-                <legend>Sistema de Cadastro</legend>
-                <label>
-                    Login:
-                    <input type="text" name="cxemail">
-                </label>
-                <label>
-                    Senha:
-                    <input type="text" name="cxsenha">
-                </label>
-                <input type="submit" value="Acessar">
-                <a href="telamenu.php">menu</a>
-            <!-- </fieldset> -->
+        <form action="open.php" method="post">
+            <legend>Sistema de Cadastro</legend>
+            <label>
+                Login:
+                <input type="text" name="cxemail">
+            </label>
+            <label>
+                Senha:
+                <input type="text" name="cxsenha">
+            </label>
+            <input type="submit" value="Acessar">
         </form>
     </div>
 </body>

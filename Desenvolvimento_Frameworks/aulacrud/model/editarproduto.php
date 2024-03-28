@@ -1,9 +1,11 @@
 <?php 
     include_once '../factory/conexao.php';
     $cod = $_GET['cod'];
-    $nome = $_GET['nome'];
-    $email = $_GET['email'];
-    $editar = "update tbcliente set nome = '$nome', email = '$email' where cod='$cod'";
+    $produto = $_GET['produto'];
+    $datavalidade = $_GET['datavalidade'];
+    $qtde = $_GET['qtde'];
+    $valor = $_GET['valor'];
+    $editar = "update tbproduto set produto = '$produto', datavalidade = '$datavalidade', qtde = '$qtde', valor = '$valor' where cod='$cod'";
     
     $executar = mysqli_query($conn, $editar);
 

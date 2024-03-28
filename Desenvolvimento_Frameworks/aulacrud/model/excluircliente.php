@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir cliente</title>
     <link rel="stylesheet" href="../css/excluir.css">
+    <?php 
+        session_start();
+        if((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)){
+            echo "<script>
+                alert('Acesso inválido, faça login primeiro!');
+                window.location.href='../index.php';
+            </script>";
+        }
+    ?>
 </head>
 <body>
     <div class="container">
@@ -19,7 +28,7 @@
             
         </table>
         <form method="post" action="">
-            <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+            <input type="hidden" name="id" value="<?php echo $_GET['cod']; ?>">
             <button type="submit" name="excluir">Excluir</button>
         </form>
         <a href="listarcliente.php"><button>Voltar</button></a>
@@ -31,7 +40,7 @@
 <?php 
     include_once '../factory/conexao.php';
     if(isset($_POST['excluir'])){
-        $cod = $_GET['id'];
+        $cod = $_GET['cod'];
         $excluir = "delete from tbcliente where cod='$cod'";
         
         $executar = mysqli_query($conn, $excluir);
