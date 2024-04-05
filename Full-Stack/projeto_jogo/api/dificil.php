@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +16,6 @@
     <h1>Jogo da memória</h1>
 </header>
 <?php
-session_start();
 
 if (isset($_POST['acao']) && $_POST['acao'] == "Voltar") {
     session_destroy();

@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +12,6 @@
     <link rel="stylesheet" href="Style/config.css">
 </head>
 <body>
-    <?php  session_start(); ?>
 <header>
     <h1 class="titulo">Jogo da memória</h1>
 </header>
