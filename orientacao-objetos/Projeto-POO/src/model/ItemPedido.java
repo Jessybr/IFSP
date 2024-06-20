@@ -40,4 +40,21 @@ public class ItemPedido {
 		this.quantidade = quantidade;
 	}
 	
+	public void adicionarItemPedido() {
+		
+	}
+	
+	public void editarItemPedido() {
+			
+	}
+
+	public void exluirItemPedido() {
+		
+	}
+	
+	public void consultarItemPedido() {
+		
+	}
+	
+	
 }

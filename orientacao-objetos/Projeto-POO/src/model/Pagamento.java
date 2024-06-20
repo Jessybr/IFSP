@@ -20,4 +20,11 @@ public class Pagamento {
 		this.formaPagamento = formaPagamento;
 	}
 	
+	public void adicionarFormaDePagamento() {
+		
+	}
+	
+	public void editarFormaDePagamento() {
+		
+	}
 }

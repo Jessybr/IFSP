@@ -72,5 +72,24 @@ public class Pedido {
 		this.estimativaTempo = estimativaTempo;
 	}
 	
+	public void adicionarPedido() {
+		
+	} 
+	
+	public void editarPedido() {
+		
+	}
+	
+	public void excluirPedido() {
+		
+	}
+	
+	public void consultarPedido() {
+		
+	}
+	
+	public void editarStatus() {
+		
+	}
 	
 }

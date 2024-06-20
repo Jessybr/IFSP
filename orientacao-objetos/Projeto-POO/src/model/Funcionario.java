@@ -3,13 +3,13 @@ package model;
 public class Funcionario extends Usuario {
 	private Integer codFuncional;
 	private String nome;
-	private Long CPF;
+	private Long cpf;
 	
-	public Funcionario(String email, String senha, Integer codFuncional, String nome, Long cPF) {
+	public Funcionario(String email, String senha, Integer codFuncional, String nome, Long cpf) {
 		super(email, senha);
 		this.codFuncional = codFuncional;
 		this.nome = nome;
-		CPF = cPF;
+		this.cpf = cpf;
 	}
 	
 	public Funcionario() {
@@ -32,12 +32,23 @@ public class Funcionario extends Usuario {
 		this.nome = nome;
 	}
 
-	public Long getCPF() {
-		return CPF;
+	public Long getcpf() {
+		return cpf;
 	}
 
-	public void setCPF(Long cPF) {
-		CPF = cPF;
+	public void setcpf(Long cpf) {
+		cpf = cpf;
 	}
 	
+	public void aceitarPedido() {
+		
+	}
+	
+	public void editarDados() {
+		
+	}
+	
+	public void consultarDados() {
+		
+	}
 }

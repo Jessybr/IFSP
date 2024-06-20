@@ -49,5 +49,23 @@ public class Restaurante {
 		this.telefone = telefone;
 	}
 	
+	public void cadastrarRestaurante() {
+		
+	}
 	
+	public void editarRestaurante() {
+		
+	}
+
+	public void desativarRestaurante() {
+		
+	}
+	
+	public void consultarRestaurante() {
+		
+	}
+	
+	public void cadastrarCardapio() {
+		
+	}
 }

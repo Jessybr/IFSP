@@ -30,5 +30,16 @@ public class Usuario {
 		this.senha = senha;
 	}
 	
+	public void cadastrarUsuário() {
+		
+	}
+	
+	public void editarUsuário() {
+		
+	}
+
+	public void desativarUsuário() {
+		
+	}
 	
 }

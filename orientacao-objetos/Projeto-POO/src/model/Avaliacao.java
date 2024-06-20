@@ -30,4 +30,7 @@ public class Avaliacao {
 		this.comentário = comentário;
 	}
 	
+	public void adicionarAvaliacao() {
+		
+	}
 }

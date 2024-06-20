@@ -30,5 +30,19 @@ public class ItemCardapio {
 		this.id = id;
 	}
 	
+	public void adicionarItemCardapio() {
+		
+	}
 	
+	public void editarItemCardapio() {
+			
+	}
+
+	public void desativarItemCardapio() {
+		
+	}
+	
+	public void consultarItemCardapio() {
+		
+	}
 }

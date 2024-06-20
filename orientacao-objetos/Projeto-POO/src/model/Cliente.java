@@ -7,16 +7,16 @@ public class Cliente extends Usuario {
 	private Long telefone;
 	private String endereco;
 	private String nome;
-	private Long CPF;
+	private Long cpf;
 	
 	public Cliente(String email, String senha, LocalDate dataNascimento, Long telefone, String endereco, String nome,
-			Long cPF) {
+			Long cpf) {
 		super(email, senha);
 		this.dataNascimento = dataNascimento;
 		this.telefone = telefone;
 		this.endereco = endereco;
 		this.nome = nome;
-		CPF = cPF;
+		this.cpf = cpf;
 	}
 	
 	public Cliente() {
@@ -56,12 +56,18 @@ public class Cliente extends Usuario {
 	}
 	
 	public Long getCPF() {
-		return CPF;
+		return cpf;
 	}
 	
-	public void setCPF(Long cPF) {
-		CPF = cPF;
+	public void setCPF(Long cpf) {
+		cpf = cpf;
 	}
 	
+	public void editarDados() {
+		
+	}
 	
+	public void consultarDados() {
+		
+	}
 }

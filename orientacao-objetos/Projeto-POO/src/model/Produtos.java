@@ -30,4 +30,20 @@ public class Produtos extends ItemCardapio {
 		this.nome = nome;
 	}
 	
+	public void cadastrarProduto() {
+		
+	}
+	
+	public void editarProduto() {
+		
+	}
+
+	public void desativarProduto() {
+		
+	}
+	
+	public void consultarProduto() {
+		
+	}
+	
 }

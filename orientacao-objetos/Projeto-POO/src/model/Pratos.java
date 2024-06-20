@@ -52,4 +52,20 @@ public class Pratos extends ItemCardapio {
 		this.nome = nome;
 	}
 	
+	public void cadastrarPratos() {
+		
+	}
+	
+	public void editarPratos() {
+		
+	}
+
+	public void desativarPratos() {
+		
+	}
+	
+	public void consultarPratos() {
+		
+	}
+	
 }

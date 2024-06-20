@@ -6,17 +6,17 @@ public class Entregador extends Usuario {
 	private LocalDate dataNascimento;
 	private Long telefone;
 	private String nome;
-	private Long CPF;
-	private Long CNH;
+	private Long cpf;
+	private Long cnh;
 	
-	public Entregador(String email, String senha, LocalDate dataNascimento, Long telefone, String nome, Long cPF,
-			Long cNH) {
+	public Entregador(String email, String senha, LocalDate dataNascimento, Long telefone, String nome, Long cpf,
+			Long cnh) {
 		super(email, senha);
 		this.dataNascimento = dataNascimento;
 		this.telefone = telefone;
 		this.nome = nome;
-		CPF = cPF;
-		CNH = cNH;
+		this.cpf = cpf;
+		this.cnh = cnh;
 	}
 	
 	public Entregador() {
@@ -47,21 +47,35 @@ public class Entregador extends Usuario {
 		this.nome = nome;
 	}
 
-	public Long getCPF() {
-		return CPF;
+	public Long getcpf() {
+		return cpf;
 	}
 
-	public void setCPF(Long cPF) {
-		CPF = cPF;
+	public void setcpf(Long cpf) {
+		cpf = cpf;
 	}
 
-	public Long getCNH() {
-		return CNH;
+	public Long getcnh() {
+		return cnh;
 	}
 
-	public void setCNH(Long cNH) {
-		CNH = cNH;
+	public void setcnh(Long cnh) {
+		cnh = cnh;
 	}
 	
+	public void aceitarEntrega() {
+		
+	}
 	
+	public void escolherRota() {
+		
+	}
+	
+	public void editarDados() {
+		
+	}
+	
+	public void consultarDados() {
+		
+	}
 }

@@ -30,5 +30,7 @@ public class Frete {
 		this.endereco = endereco;
 	}
 	
-	
+	public void calcularFrete() {
+		
+	}
 }
