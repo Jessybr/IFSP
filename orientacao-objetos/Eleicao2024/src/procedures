@@ -1,0 +1,345 @@
+DELIMITER $$
+--
+-- Procedimentos
+--
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `alterar_Usuario` (IN `v_idUsuario` INT(11), IN `v_senha` VARCHAR(60), IN `v_nome` VARCHAR(50), IN `v_cpf` VARCHAR(14), IN `v_tipo` VARCHAR(1), IN `v_ativo` VARCHAR(1))  
+UPDATE usuario SET senha = v_senha, nome =v_nome, cpf = v_cpf, tipo =v_tipo, ativo=v_ativo WHERE idUsuario = v_idUsuario$$
+
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `Inserir_Usuario` (IN `senha` VARCHAR(60), IN `nome` VARCHAR(50), IN `cpf` VARCHAR(14), IN `tipo` VARCHAR(1), IN `ativo` INT(1))  
+BEGIN
+insert into usuario (senha,nome,cpf,tipo,ativo)         
+    values(senha,nome,cpf,tipo,ativo);
+END$$
+
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `selecionar_Usuario` (IN `v_cpf` VARCHAR(14))  
+SELECT idUsuario, senha, nome, cpf, tipo, ativo FROM usuario WHERE cpf = v_cpf$$
+
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listar_VotoEleicao`(IN `v_idEleicao` INT)
+SELECT idVoto, dataVoto, tipoEleitor, idCandidatura, idUrna, idEleicao FROM voto WHERE 
+idEleicao = v_idEleicao$$
+DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Inserir_Eleicao`(IN `v_dataRealizacao` datetime, IN `v_statusEleicao` VARCHAR(1))
+BEGIN
+insert into eleicao (dataRealizacao,statusEleicao)         
+    values(v_dataRealizacao,v_statusEleicao);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `selecionar_Eleicao_Codigo`(IN `v_idEleicao`INT)
+SELECT idEleicao, dataRealizacao,statusEleicao FROM eleicao WHERE idEleicao = v_idEleicao$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listar_VotoEleicao`(IN `v_idEleicao` INT)
+SELECT 
+voto.idVoto, 
+voto.dataVoto, 
+voto.tipoEleitor, 
+voto.VotoBranco,
+voto.VotoNulo,
+voto.idEleicao,
+voto.idCandidatura, 
+candidatura.nomeCandidato,
+candidatura.pesoAluno,
+candidatura.pesoProfessor,
+candidatura.pesoFuncionario,
+candidatura.tipoCandidatura,
+voto.idUrna, 
+urna.modeloUrna,
+urna.dataAbertura,
+urna.dataFechamento,
+urna.statusUrna,
+urna.idUsuario,
+usuario.senha,
+usuario.nome,
+usuario.cpf,
+usuario.tipo,
+usuario.ativo
+FROM 
+	voto, candidatura,urna,usuario 
+WHERE 
+voto.idEleicao = v_idEleicao AND 
+voto.idCandidatura = candidatura.idCandidatura AND
+voto.idUrna = urna.idUrna AND
+urna.idUsuario = usuario.idUsuario$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listar_EleitorEleicao`(IN `v_idEleicao` INT)
+SELECT 
+eleitor_eleicao.idEleitorEleicao,
+eleitor_eleicao.idEleitor, 
+eleitor_eleicao.idEleicao, 
+eleitor_eleicao.dataVoto,	
+eleitor.idEleitor, 
+eleitor.nomeEleitor,  
+eleitor.dataCadastro 
+FROM 
+	eleitor_Eleicao, eleitor 
+WHERE 
+eleitor_eleicao.idEleicao = v_idEleicao AND 
+eleitor_eleicao.idEleitor = eleitor.idEleitor$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `Inserir_EleitorEleicao` (IN `v_idEleitor` INT(11), IN `v_idEleicao` INT(11), IN `v_dataVoto` datetime)  
+BEGIN
+insert into eleitor_Eleicao (idEleitor,idEleicao,dataVoto)         
+    values(v_idEleitor,v_idEleicao, v_dataVoto);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultar_EleitorEleicao`(IN `v_idEleitor` INT(11), IN `v_idEleicao` INT(11))
+SELECT 
+eleitor_eleicao.idEleitorEleicao,
+eleitor_eleicao.idEleitor, 
+eleitor_eleicao.idEleicao, 
+eleitor_eleicao.dataVoto,	
+eleitor.idEleitor, 
+eleitor.nomeEleitor,  
+eleitor.dataCadastro 
+FROM 
+	eleitor_Eleicao, eleitor 
+WHERE 
+eleitor_eleicao.idEleicao = v_idEleicao AND 
+eleitor_eleicao.idEleitor = v_idEleitor AND 
+eleitor_eleicao.idEleitor = eleitor.idEleitor$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `inserir_Aluno` (IN `v_numProntuario` VARCHAR (50), IN `v_curso`  VARCHAR (150), IN `v_statusMatricula`  VARCHAR (50))  
+BEGIN
+insert into aluno (numProntuario,curso,statusMatricula)         
+    values(v_numProntuario, v_curso,v_statusMatricula);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `inserir_Professor` (IN `v_numFuncional` INT, IN `v_titulacao` VARCHAR (150), IN `v_areaAtuacao` VARCHAR (150), IN `v_statusDocencia`  VARCHAR (50))  
+BEGIN
+insert into professor (numFuncional,titulacao,areaAtuacao,statusDocencia)         
+    values(v_numFuncional, v_titulacao,v_areaAtuacao,v_statusDocencia);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `inserir_Funcionario` (IN `v_numFuncional` INT, IN `v_departamento` VARCHAR (150), IN `v_cargo` VARCHAR (150), IN `v_statusAtividade`  VARCHAR (50))  
+BEGIN
+insert into funcionario (numFuncional,departamento,cargo,statusAtividade)         
+    values(v_numFuncional, v_departamento,v_cargo,v_statusAtividade);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `inserir_Eleitor` (IN `v_nomeEleitor` VARCHAR (255),IN `v_dataCadastro` datetime)  
+BEGIN
+insert into eleitor (nomeEleitor,dataCadastro, )         
+    values(v_nomeEleitor, v_dataCadastro);
+END$$
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `selecionar_Eleitor` (IN `v_idEleitor` INT)  
+SELECT idEleitor, nomeEleitor, dataCadastro, idAluno, idProfessor, idFuncionario FROM eleitor WHERE idEleitor = v_idEleitor$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `selecionar_Aluno` (IN `v_idAluno` INT)  
+SELECT idAluno, numProntuario, curso, statusMatricula FROM aluno WHERE idAluno = v_idAluno$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `selecionar_Professor` (IN `v_idProfessor` INT)  
+SELECT idProfessor, numFuncional, titulacao, areaAtuacao, statusDocencia FROM professor WHERE idProfessor = v_idProfessor$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `selecionar_Funcionario` (IN `v_idFuncionario` INT)  
+SELECT idFuncionario, numFuncional, departamento, cargo, statusAtividade FROM funcionario WHERE idFuncionario = v_idFuncionario$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `alterar_EleitorFKAluno` (IN `v_idEleitor` INT, IN `v_idAluno` INT)
+UPDATE eleitor SET idAluno =v_idAluno WHERE idEleitor = v_idEleitor$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `alterar_EleitorFKProfessor` (IN `v_idEleitor` INT, IN `v_idProfessor` INT)
+UPDATE eleitor SET idProfessor = v_idProfessor WHERE idEleitor = v_idEleitor$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `alterar_EleitorFKFuncionario` (IN `v_idEleitor` INT, IN `v_idFuncionario` INT)
+UPDATE eleitor SET idFuncionario = v_idFuncionario WHERE idEleitor = v_idEleitor$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `listar_UrnaModelo` (IN `v_modeloUrna` varchar(50))  
+SELECT 
+urna.idUrna,
+urna.modeloUrna,
+urna.dataAbertura,
+urna.dataFechamento,
+urna.statusUrna,
+urna.idUsuario,
+usuario.senha,
+usuario.nome,
+usuario.cpf,
+usuario.tipo,
+usuario.ativo
+FROM 
+	urna,usuario 
+WHERE 
+urna.modeloUrna = v_modeloUrna AND
+urna.idUsuario = usuario.idUsuario$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `listar_UrnaDataAbertura` (IN `v_dataAbertura` datetime)  
+SELECT 
+urna.idUrna,
+urna.modeloUrna,
+urna.dataAbertura,
+urna.dataFechamento,
+urna.statusUrna,
+urna.idUsuario,
+usuario.senha,
+usuario.nome,
+usuario.cpf,
+usuario.tipo,
+usuario.ativo
+FROM 
+	urna,usuario 
+WHERE 
+urna.dataAbertura = v_dataAbertura AND
+urna.idUsuario = usuario.idUsuario$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `listar_UrnaModeloDataAbertura` (IN `v_modeloUrna` varchar(50),`v_dataAbertura` datetime)  
+SELECT 
+urna.idUrna,
+urna.modeloUrna,
+urna.dataAbertura,
+urna.dataFechamento,
+urna.statusUrna,
+urna.idUsuario,
+usuario.senha,
+usuario.nome,
+usuario.cpf,
+usuario.tipo,
+usuario.ativo
+FROM 
+	urna,usuario 
+WHERE 
+urna.modeloUrna = v_modeloUrna AND
+urna.dataAbertura = v_dataAbertura AND
+urna.idUsuario = usuario.idUsuario$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Inserir_Urna`(IN `v_modeloUrna` VARCHAR(50),
+ IN `v_dataAbertura` datetime, IN `v_dataFechamento` datetime, IN `v_statusUrna` VARCHAR(1),
+ IN `v_idUsuario` INT)
+BEGIN
+insert into urna (modeloUrna,dataAbertura,dataFechamento,statusUrna,idUsuario)         
+    values(v_modeloUrna,v_dataAbertura,v_dataFechamento,v_statusUrna,v_idUsuario);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `consultar_UrnaCodUrna` (IN `v_idUrna` INT)  
+SELECT 
+urna.idUrna,
+urna.modeloUrna,
+urna.dataAbertura,
+urna.dataFechamento,
+urna.statusUrna,
+urna.idUsuario,
+usuario.senha,
+usuario.nome,
+usuario.cpf,
+usuario.tipo,
+usuario.ativo
+FROM 
+	urna,usuario 
+WHERE 
+urna.idUrna = v_idUrna$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `alterar_Urna` (IN `v_idUrna` INT, IN `v_modeloUrna` VARCHAR(50),
+ IN `v_dataAbertura` datetime, IN `v_dataFechamento` datetime, IN `v_statusUrna` VARCHAR(1),
+ IN `v_idUsuario` INT)
+UPDATE urna SET modeloUrna = v_modeloUrna, dataAbertura = v_dataAbertura, 
+dataFechamento = v_dataFechamento, statusUrna = v_statusUrna, 
+idUsuario = v_idUsuario
+WHERE idUrna = v_idUrna$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `abrir_Urna` (IN `v_idUrna` INT, IN `v_dataAbertura` datetime,
+ IN `v_statusUrna` VARCHAR(1))
+UPDATE urna SET dataAbertura = v_dataAbertura, statusUrna = v_statusUrna
+WHERE idUrna = v_idUrna$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `fechar_Urna` (IN `v_idUrna` INT, IN `v_dataFechamento` datetime,
+ IN `v_statusUrna` VARCHAR(1))
+UPDATE urna SET dataFechamento = v_dataFechamento, statusUrna = v_statusUrna
+WHERE idUrna = v_idUrna$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inativar_Urna` (IN `v_idUrna` INT, IN `v_statusUrna` VARCHAR(1))
+UPDATE urna SET statusUrna = v_statusUrna
+WHERE idUrna = v_idUrna$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `consultar_Usuario` (IN `v_idUsuario` INT)  
+SELECT idUsuario, senha, nome, cpf, tipo, ativo FROM usuario 
+WHERE idUsuario = v_idUsuario$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Inserir_Voto`(IN `v_dataVoto` datetime,
+ IN `v_tipoEleitor` VARCHAR(1), IN `v_VotoBranco` VARCHAR(1), IN `v_VotoNulo` VARCHAR(1),
+ IN `v_idCandidatura` INT, IN `v_idUrna` INT, IN `v_idEleicao` INT)
+BEGIN
+insert into voto (dataVoto,tipoEleitor,VotoBranco,VotoNulo,idCandidatura,idUrna,idEleicao)         
+    values(v_dataVoto,v_tipoEleitor,v_VotoBranco,v_VotoNulo,v_idCandidatura,v_idUrna,v_idEleicao);
+END$$
+DELIMITER ;

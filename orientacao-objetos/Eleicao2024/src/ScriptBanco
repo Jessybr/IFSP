@@ -1,0 +1,94 @@
+CREATE TABLE `urna` (
+  `idUrna` int NOT NULL,
+  `modeloUrna` varchar(50) DEFAULT NULL,
+  `dataAbertura` datetime DEFAULT NULL,
+  `dataFechamento` datetime DEFAULT NULL,
+  `statusUrna` char(1) DEFAULT 'F',
+   `idUsuario` int DEFAULT NULL,
+  PRIMARY KEY (`idUrna`),
+  KEY `idUsuario` (`idUsuario`),
+  FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`)
+);
+
+CREATE TABLE `candidatura` (
+  `idCandidatura` int NOT NULL,
+  `nomeCandidato` varchar(50) DEFAULT NULL,
+  `pesoAluno` int NOT NULL,
+  `pesoProfessor` int NOT NULL,
+  `pesoFuncionario` int NOT NULL,
+  PRIMARY KEY (`idCandidatura`)
+);
+
+CREATE TABLE `voto` (
+  `idVoto` int NOT NULL,
+  `dataVoto` datetime DEFAULT NULL,
+  `tipoEleitor` char(1) DEFAULT NULL,
+   `idCandidatura` int DEFAULT NULL,
+   `idUrna` int DEFAULT NULL,
+    `idEleicao` int DEFAULT NULL,
+  PRIMARY KEY (`idVoto`),
+  KEY `idCandidatura` (`idCandidatura`),
+  KEY `idEleicao` (`idEleicao`),
+  KEY `idUrna` (`idUrna`),
+  FOREIGN KEY (`idCandidatura`) REFERENCES `candidatura` (`idCandidatura`),
+  FOREIGN KEY (`idEleicao`) REFERENCES `eleicao` (`idEleicao`),
+  FOREIGN KEY (`idUrna`) REFERENCES `urna` (`idUrna`)
+);
+
+CREATE TABLE `eleitor` ( 
+ `idEleitor` int NOT NULL AUTO_INCREMENT, 
+  `nomeEleitor` VARCHAR(255) DEFAULT NULL,
+  `dataCadastro` datetime DEFAULT NULL,
+  `idAluno` int NOT NULL,
+ `idProfessor` int DEFAULT NULL,
+  `idFuncionario` int DEFAULT NULL,
+  PRIMARY KEY (`idEleitor`),
+  KEY `idAluno` (`idAluno`),
+  KEY `idProfessor` (`idProfessor`),
+  KEY `idFuncionario` (`idFuncionario`),
+  FOREIGN KEY (`idAluno`) REFERENCES `aluno` (`idAluno`),
+  FOREIGN KEY (`idProfessor`) REFERENCES `professor` (`idProfessor`),
+  FOREIGN KEY (`idFuncionario`) REFERENCES `funcionario` (`idFuncionario`)
+);
+
+CREATE TABLE eleitor_eleicao (
+ `idEleitorEleicao` int NOT NULL AUTO_INCREMENT,
+ `idEleitor` int DEFAULT NULL,
+  `idEleicao` int DEFAULT NULL,
+ 
+  PRIMARY KEY (`idEleitorEleicao`),
+  KEY `idEleitor` (`idEleitor`),
+  KEY `idEleicao` (`idEleicao`),
+  FOREIGN KEY (`idEleitor`) REFERENCES `eleitor` (`idEleitor`),
+  FOREIGN KEY (`idEleicao`) REFERENCES `eleicao` (`idEleicao`)
+);
+
+CREATE TABLE `aluno` (
+  `idAluno` int NOT NULL AUTO_INCREMENT,
+  `numProntuario` varchar(50) DEFAULT NULL,
+  `curso` varchar(150) DEFAULT NULL,
+  `statusMatricula` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`idAluno`)
+);
+
+CREATE TABLE `professor` (
+  `idProfessor` int NOT NULL AUTO_INCREMENT,
+  `numFuncional` int NOT NULL,
+  `titulacao` varchar(150) DEFAULT NULL,
+  `areaAtuacao` varchar(150) DEFAULT NULL,
+  `statusDocencia` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`idProfessor`)
+);
+
+CREATE TABLE `funcionario` (
+  `idFuncionario` int NOT NULL AUTO_INCREMENT,
+  `numFuncional` int NOT NULL,
+  `departamento` varchar(150) DEFAULT NULL,
+  `cargo` varchar(150) DEFAULT NULL,
+  `statusAtividade` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`idFuncionario`)
+);
+
+ALTER TABLE `eleitor` ADD CONSTRAINT `fk_aluno` FOREIGN KEY (`idAluno`) REFERENCES `aluno` (`idAluno`) ;
+
+	
