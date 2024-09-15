@@ -9,7 +9,8 @@ public class Pedido {
 	private String status;
 	private String endereco;
 	private Double estimativaTempo;
-	
+	private Cliente nome_cliente;
+	private Restaurante nome_restaurante;
 	public Pedido() {
 		
 	}
