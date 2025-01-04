@@ -53,7 +53,6 @@
         $dependente2->email = "enzo@email.com";
         $dependente2->fone = "(11)92112222";
         $dependente2->cadastrodependente();
-
     ?>
 </body>
 </html>
