@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1716938863 source:c:\users\jessi\documents\programacao_estudos\arvoreavl\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreAVL.h"
+
+1717616175 c:\users\jessi\documents\programacao_estudos\arvoreavl\arvoreavl.h
+
+1717616305 source:c:\users\jessi\documents\programacao_estudos\arvoreavl\arvoreavl.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreAVL.h"
+
